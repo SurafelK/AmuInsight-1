@@ -1,0 +1,21 @@
+.course{
+    height: 300px;
+    width: 300px;
+    background: rgba(196, 196, 196);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 30px;
+    align-items:center;
+}
+.Posts{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+.info{
+    display: flex;
+}
