@@ -21,4 +21,4 @@ const examSchema = mongoose.Schema(
   }
 )
 
-module.exports = mongoose.model('exam', examSchema)
+module.exports = mongoose.model('Exam', examSchema)

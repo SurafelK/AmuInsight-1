@@ -22,6 +22,11 @@ const setNote = asyncHandler(async (req, res) => {
       fileLocation:req.body.fileLocation,
       status:req.body.status
     });
+
+    // const noteRelation = await NoteRelation.create({
+    //   CurrentNote: note.id,
+    //   user: user.id,
+    // });
   
     res.status(200).json(note)
 })
@@ -45,6 +50,7 @@ const updateNote = asyncHandler(async (req, res) => {
 // @desc    Delete note @route   DELETE /api/goals/:id  @access  Private
 const deleteNote = asyncHandler(async (req, res) => {
     const note = await Note.findById(req.params.id)
+    const user = await Exam.findById(req.params.id)
 
     if (!note) {
         res.status(400)
@@ -52,6 +58,7 @@ const deleteNote = asyncHandler(async (req, res) => {
     }
 
     await Note.deleteOne()
+    // await NoteRelation.deleteOne()
 
     res.status(200).json({id: req.params.id})
 })
