@@ -1,28 +1,17 @@
-const asyncHandler = require('express-async-handler')
+const asyncHandler = require('express-async-handler');
+
+const Exam = require('../models/examModel');
+const Note = require('../models/noteModel');
 
 // @desc    Get posts   @route   GET /api/posts @access  Private
 const getPosts = asyncHandler(async (req, res) => {
-  res.status(200).json('get posts')
-})
+  const exams = await Exam.find();
+  const notes = await Note.find();
 
-// @desc    Set post    @route   POST /api/posts    @access  Private
-const setPost = asyncHandler(async (req, res) => {
-  res.status(200).json('create post')
-})
-
-// @desc    Update goal @route   PUT /api/goals/:id @access  Private
-const updatePost = asyncHandler(async (req, res) => {
-  res.status(200).json('updatedGoal')
-})
-
-// @desc    Delete goal @route   DELETE /api/goals/:id  @access  Private
-const deletePost = asyncHandler(async (req, res) => {
-  res.status(200).json('delete post')
+  res.status(200).json(exams);
+  res.status(200).json(notes);
 })
 
 module.exports = {
   getPosts,
-  setPost,
-  updatePost,
-  deletePost,
 }
