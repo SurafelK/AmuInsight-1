@@ -5,7 +5,7 @@ const ExamRelation = require('../models/examRelationModel');
 
 // @desc    Get exams   @route   GET /api/posts @access  Private
 const getExams = asyncHandler(async (req, res) => {
-    const exams = await Exam.find();
+    const exams = await Exam.find({ user: req.user.id });
   
     res.status(200).json(exams);
   })
@@ -24,11 +24,13 @@ const setExam = asyncHandler(async (req, res) => {
       status: req.body.status
     });
 
-    // const examRelation = await ExamRelation.create({
-    //   CurrentExam: exam.id,
-    //   user: user.id,
-    // });
-  
+    if(exam){
+      const examRelation = await ExamRelation.create({
+        CurrentExam: exam.id,
+        user: req.user.id,
+      });
+    }
+    
     res.status(200).json(exam)
 })
 

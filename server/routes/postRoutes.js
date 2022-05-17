@@ -19,9 +19,11 @@ const {
   deleteNote,
 } = require('../controllers/noteControllers')
 
+const { protect } = require('../middleware/authMiddleware')
+
 router.route('/').get(getPosts)
-router.route('/exam').get(getExams).post(setExam)
-router.route('/note').get(getNotes).post(setNote)
+router.route('/exam').get(protect,getExams).post(protect,setExam)
+router.route('/note').get(protect, getNotes).post(protect, setNote)
 router.route('/exam/:id').delete(deleteExam).put(updateExam)
 router.route('/note/:id').delete(deleteNote).put(updateNote)
 

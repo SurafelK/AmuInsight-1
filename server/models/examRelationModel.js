@@ -7,9 +7,9 @@ const examRelationSchema = mongoose.Schema(
       required: [true, 'Please add a User value'],
       ref:'User'
     },
-    exam: {
+    CurrentExam: {
       type: mongoose.Schema.Types.ObjectId,
-      required: [true, 'Please add a Note value'],
+      required: [true, 'Please add a Exam value'],
       ref:'Exam'
     }
   }

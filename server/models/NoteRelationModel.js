@@ -7,7 +7,7 @@ const NoteRelationSchema = mongoose.Schema(
       required: [true, 'Please add a User value'],
       ref:'User'
     },
-    note: {
+    CurrentNote: {
       type: mongoose.Schema.Types.ObjectId,
       required: [true, 'Please add a Note value'],
       ref:'Note'

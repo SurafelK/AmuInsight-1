@@ -1,10 +1,11 @@
 const asyncHandler = require('express-async-handler');
 
 const Note = require('../models/noteModel');
+const NoteRelation = require('../models/NoteRelationModel')
 
 // @desc    Get notes   @route   GET /api/posts @access  Private
 const getNotes = asyncHandler(async (req, res) => {
-    const notes = await Note.find();
+    const notes = await Note.find({ user: req.user.id });
 
     res.status(200).json(notes);
   })
@@ -23,10 +24,12 @@ const setNote = asyncHandler(async (req, res) => {
       status:req.body.status
     });
 
-    // const noteRelation = await NoteRelation.create({
-    //   CurrentNote: note.id,
-    //   user: user.id,
-    // });
+    if(note){
+        const noteRelation = await NoteRelation.create({
+            CurrentNote: note.id,
+            user: req.user.id,
+        });
+    }
   
     res.status(200).json(note)
 })
