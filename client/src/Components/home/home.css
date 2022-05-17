@@ -7,16 +7,14 @@
 .container .slogan{
     align-self: center;
     margin-top:150px;
-    
-
 }
-.container .yrbtns{
+.container .btnBatch{
     align-self: center;
     margin-top: 70px;
     padding: 25px;
     border: none;
 }
-.container .yrbtns .g{
+.container .btnBatch .g{
     border: none;
     justify-content: space-between;
     padding: 10px;

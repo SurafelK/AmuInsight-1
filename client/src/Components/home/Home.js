@@ -10,7 +10,7 @@ function Home()
                 <h1>Your best note and exam sharing</h1>
             
             </div>
-            <div className="yrbtns">
+            <div className="btnBatch">
                 <button className="g">All</button>
                 <button className="g">G1</button>
                 <button className="g">G2</button>

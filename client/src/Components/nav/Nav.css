@@ -20,19 +20,18 @@
 
 .navbar .btns .uploadbtn,.usernamebtn{
     justify-content: space-between;
-   
-    font-size: large;
+    font-size: 20px;
     padding: 10px;
     cursor: pointer;
     margin-left: 33px ;
 }
 .navbar .btns .usernamebtn{
-    border-radius:500px;
+    border-radius:50px;
+    width: 40px;
     border: none;
-
 }
 .navbar .btns .uploadbtn{
     border: none;
     border-radius: 70px;
-    font-size: 25px;
+    font-size: 20px;
 }
